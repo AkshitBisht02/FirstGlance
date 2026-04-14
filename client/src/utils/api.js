@@ -1,4 +1,4 @@
-const BASE_URL = '/api';
+const BASE_URL = 'https://first-glance-backend.onrender.com/api';
 
 export async function fetchNodes() {
   const res = await fetch(`${BASE_URL}/nodes`);

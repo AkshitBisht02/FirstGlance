@@ -148,9 +148,11 @@ export default function MapView({
 
     displayNodes.forEach((name) => {
       const node = nodes[name];
+      if (!node || node.lat === undefined || node.lng === undefined) return;
       const type = node.type || getNodeType(name);
       const color = getMarkerColor(type);
       const icon  = createSvgIcon(color, 24);
+
 
       const marker = L.marker([node.lat, node.lng], { icon })
         .addTo(leafletMap.current)

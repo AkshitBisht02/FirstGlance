@@ -1,0 +1,53 @@
+# ════════════════════════════════════════════════════════
+# FirstGlance — Campus Navigation System
+# Requirements & Dependencies
+# ════════════════════════════════════════════════════════
+
+# ── RUNTIME ENVIRONMENT ──────────────────────────────────
+Node.js        >= 18.0.0
+npm            >= 9.0.0
+MongoDB        >= 6.0.0
+
+# ── SERVER (npm packages) ────────────────────────────────
+express        ^4.19.2    # Web framework
+mongoose       ^8.4.0     # MongoDB ODM
+cors           ^2.8.5     # Cross-origin resource sharing
+dotenv         ^16.4.5    # Environment variable loader
+nodemon        ^3.1.3     # Dev auto-restart (devDependency)
+
+# ── CLIENT (npm packages) ────────────────────────────────
+react                ^18.3.1    # UI library
+react-dom            ^18.3.1    # React DOM renderer
+react-router-dom     ^6.23.1    # Client-side routing
+leaflet              ^1.9.4     # Interactive maps
+
+# ── CLIENT BUILD TOOLS (devDependencies) ─────────────────
+vite                 ^5.2.11    # Build tool & dev server
+@vitejs/plugin-react ^4.3.1     # React plugin for Vite
+
+# ── ROOT DEV TOOLS ───────────────────────────────────────
+concurrently         ^8.2.2     # Run server + client simultaneously
+
+# ── BROWSER REQUIREMENTS ─────────────────────────────────
+# Chrome      >= 80
+# Firefox     >= 75
+# Safari      >= 14
+# Edge        >= 80
+#
+# Required browser APIs:
+#   - Geolocation API (requires HTTPS in production)
+#   - Fetch API
+#   - CSS Custom Properties (variables)
+#   - IntersectionObserver
+#   - ES2020+ (async/await, optional chaining)
+#   - WebGL NOT required
+
+# ── EXTERNAL CDN (loaded at runtime, no install needed) ──
+# Leaflet CSS: https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+# Leaflet marker images: https://unpkg.com/leaflet@1.9.4/dist/images/
+# Google Fonts: Cormorant Garamond, DM Sans, Space Mono
+
+# ── INSTALL COMMANDS ─────────────────────────────────────
+# npm run install:all     # Install all packages in one command
+# npm run seed            # Seed MongoDB with campus data
+# npm run dev             # Start both server (5000) and client (3000)

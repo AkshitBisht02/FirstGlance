@@ -1,0 +1,137 @@
+/* ══════════════════════════════════════════════════════════
+   MAP VIEW
+   ══════════════════════════════════════════════════════════ */
+
+.map-view {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ─── CUSTOM MARKERS ────────────────────────────────────── */
+.custom-marker {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-marker__dot {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--mc, #c9a84c);
+  border: 2px solid rgba(255,255,255,0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 0 2px rgba(var(--mc, 201,168,76), 0.2);
+  transition: transform 0.2s var(--ease-back);
+}
+
+.custom-marker:hover .custom-marker__dot {
+  transform: scale(1.25);
+}
+
+/* Pulse animation for live user location */
+.custom-marker--pulse .custom-marker__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--mc, #9f7aea);
+  opacity: 0;
+  animation: markerPulse 2s ease-out infinite;
+}
+
+@keyframes markerPulse {
+  0%   { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2);   opacity: 0; }
+}
+
+/* ─── POPUP ACTIONS ─────────────────────────────────────── */
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.popup-btn {
+  display: block;
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: filter 0.15s ease, transform 0.15s ease;
+  text-align: left;
+}
+
+.popup-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+
+.popup-btn--source {
+  background: rgba(62, 207, 142, 0.2);
+  border: 1px solid rgba(62, 207, 142, 0.5);
+  color: #3ecf8e;
+}
+
+.popup-btn--dest {
+  background: rgba(240, 82, 82, 0.2);
+  border: 1px solid rgba(240, 82, 82, 0.5);
+  color: #f87171;
+}
+
+.popup-btn--swap {
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #c9a84c;
+  font-size: 0.72rem;
+}
+.popup-content {
+  padding: 4px 2px;
+  min-width: 140px;
+}
+
+.popup-type {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: #c9a84c;
+  margin-bottom: 4px;
+}
+
+.popup-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0ece4;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.popup-desc {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #8a8278;
+  margin-bottom: 6px;
+}
+
+.popup-rooms {
+  font-size: 0.72rem;
+  color: #8a8278;
+  margin-bottom: 6px;
+  font-family: monospace;
+}
+
+.popup-hint {
+  font-size: 0.7rem;
+  color: #3ecf8e;
+  font-style: italic;
+  margin-top: 4px;
+}

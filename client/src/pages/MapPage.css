@@ -1,0 +1,107 @@
+/* ══════════════════════════════════════════════════════════
+   MAP PAGE
+   ══════════════════════════════════════════════════════════ */
+
+.map-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--clr-bg);
+}
+
+.map-page__body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-page__map-wrap {
+  flex: 1;
+  position: relative;
+  transition: margin-left 0.35s var(--ease);
+}
+
+/* When sidebar is open on desktop, shift map right */
+@media (min-width: 769px) {
+  .map-page--sidebar-open .map-page__map-wrap {
+    margin-left: 320px;
+  }
+}
+
+/* ─── TOAST ─────────────────────────────────────────────── */
+.map-toast {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: toastIn 0.3s var(--ease-back) both, toastOut 0.3s var(--ease) 2.5s both;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+@keyframes toastOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.map-toast--source {
+  background: rgba(62, 207, 142, 0.18);
+  border: 1px solid rgba(62, 207, 142, 0.45);
+  color: #3ecf8e;
+}
+.map-toast--dest {
+  background: rgba(240, 82, 82, 0.18);
+  border: 1px solid rgba(240, 82, 82, 0.45);
+  color: #f87171;
+}
+.map-toast--warn {
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  color: var(--clr-gold-lt);
+}
+.map-toast--info {
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  color: #93c5fd;
+}
+
+/* ─── LOADER ────────────────────────────────────────────── */
+.map-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: var(--clr-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.map-loader__spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--clr-border2);
+  border-top-color: var(--clr-gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

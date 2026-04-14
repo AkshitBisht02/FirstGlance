@@ -1,0 +1,25 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Optional (if separate client/server node_modules exist)
+client/node_modules/
+server/node_modules/
